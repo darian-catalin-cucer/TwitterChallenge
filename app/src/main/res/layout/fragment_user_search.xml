@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="cucerdariancatalin.twitter.screens.search.UserSearchViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="56dp"
+            android:id="@+id/username_input_layout"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:hint="@string/search_for_users"
+            app:errorEnabled="true"
+            app:error="@{viewModel.errorText}"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:id="@+id/username_input_edit_text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/username_input_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            app:adapter="@{viewModel.adapter}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

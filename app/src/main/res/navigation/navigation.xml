@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/search_for_user">
+
+    <action android:id="@+id/go_to_details"
+        app:destination="@id/user_details"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"/>
+
+    <fragment android:id="@+id/search_for_user"
+        android:name="cucerdariancatalin.twitter.screens.search.UserSearchFragment"
+        android:label="search_for_user"/>
+
+    <fragment android:id="@+id/user_details"
+        android:name="cucerdariancatalin.twitter.screens.details.UserDetailsFragment"
+        android:label="user_details"/>
+
+</navigation>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TwitterUserSearch</string>
+    <string name="search_for_users">Search for users</string>
+    <string name="twitter_user">%s %s %s</string>
+</resources>
